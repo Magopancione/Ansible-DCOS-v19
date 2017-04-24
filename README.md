@@ -1,2 +1,2 @@
 #  Test installazione DCOS con ansible
-Attenzione non cancellar test.yml
+Attenzione non cancellare test.yml
