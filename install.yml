@@ -1,0 +1,48 @@
+---
+- hosts: bootstrap
+  become: yes
+  remote_user:  centos
+  become_user: root
+  become_method: sudo
+  gather_facts: no
+  environment:
+        http_proxy: http://10.222.192.4:8080
+        https_proxy: http://10.222.192.4:8080
+  roles:
+    - bootstrap
+
+- hosts: master
+  become: yes
+  remote_user:  centos
+  become_user: root
+  become_method: sudo
+  gather_facts: no
+  environment:
+        http_proxy: http://10.222.192.4:8080
+        https_proxy: http://10.222.192.4:8080
+  roles:
+    - master  
+    
+- hosts: agent
+  become: yes
+  remote_user:  centos
+  become_user: root
+  become_method: sudo
+  gather_facts: no
+  environment:
+        http_proxy: http://10.222.192.4:8080
+        https_proxy: http://10.222.192.4:8080
+  roles:
+    - agent 
+
+- hosts: agent_pub
+  become: yes
+  remote_user:  centos
+  become_user: root
+  become_method: sudo
+  gather_facts: no
+  environment:
+        http_proxy: http://10.222.192.4:8080
+        https_proxy: http://10.222.192.4:8080
+  roles:
+    - agent_pub      

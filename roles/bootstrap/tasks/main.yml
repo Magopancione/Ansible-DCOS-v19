@@ -1,0 +1,26 @@
+    - name: Create directory genconf    
+      file: path=/home/centos/genconf/  state=directory     
+      
+    - copy: src=install_docker/ip-detect 
+        dest=/home/centos/genconf/ip-detect   
+        
+    - copy: src=install_docker/config.yaml
+        dest=/home/centos/genconf/config.yaml
+        
+    - copy:
+        src: install_docker/ssh_key
+        dest: /home/centos/genconf/ssh_key
+        owner: root
+        group: root
+        mode: 0600
+        backup: yes
+    
+    - name: Download a config file
+      shell: curl -O https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh
+      
+    - name: Download a config file
+      shell: bash dcos_generate_config.sh --genconf
+      
+      
+    #- name: Download a config file
+    #  shell: bash dcos_generate_config.sh --install-prereqs
