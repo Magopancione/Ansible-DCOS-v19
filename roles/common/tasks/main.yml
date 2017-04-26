@@ -84,3 +84,7 @@
       
     - copy: src=install_docker/resolv.conf
         dest=/etc/resolv.conf
+        
+        
+    - copy: src=install_docker/hosts
+        dest=/etc/hosts         
