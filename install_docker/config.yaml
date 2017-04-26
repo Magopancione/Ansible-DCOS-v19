@@ -1,13 +1,13 @@
 ---
 agent_list:
-- 192.168.102.17
+- 192.168.102.22
 # Use this bootstrap_url value unless you have moved the DC/OS installer assets.
 bootstrap_url: file:///opt/dcos_install_tmp
 cluster_name: DCOS19
 exhibitor_storage_backend: static
 master_discovery: static
 master_list:
-- 192.168.102.19
+- 192.168.102.21
 public_agent_list:
 - 10.116.104.99
 resolvers:
