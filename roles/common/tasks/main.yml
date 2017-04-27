@@ -61,9 +61,12 @@
     - name: disable selinux
       selinux: state=disabled
 
-    - copy: src=install_docker/environment
-        dest=/etc/environment
+   # - copy: src=install_docker/environment
+   #     dest=/etc/environment
 
+        
+    - copy: src=install_docker/hosts
+        dest=/etc/hosts   
       
 #    - lineinfile: dest=/etc/selinux/config
 #        state=present
@@ -85,6 +88,4 @@
     #- copy: src=install_docker/resolv.conf
     #    dest=/etc/resolv.conf
         
-        
-    #- copy: src=install_docker/hosts
-    #    dest=/etc/hosts         
+      
